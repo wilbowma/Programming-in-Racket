@@ -105,7 +105,7 @@ There is still a lot that I do not entirely understand but I think there is a lo
 learn from that and understand the tricks that are going on in there. 
 
 
-@section[#:tag "Egs"]{let, Let*, letrec and define}
+@section[#:tag "Egs"]{let, let*, letrec and define}
 
 Why do I have a seperate section on this?
 Well, these are some of the interesting things that I found while learning Racket. 
@@ -120,6 +120,64 @@ can be so useful.
 Before this my thinking was in a different direction where while designing the semantics
 I would try to observe the real thing and try to model that exactly the way i saw it, 
 it only took me some time to realise that that is not the case. 
+
+When one is trying to design the semantics for a language, i think that it is important 
+to stop thinking about the application entirely and only concentrate on different ways 
+in which the semantics can be tweaked. 
+This is what I was missing out I think. 
+
+Understanding the scope of each binding that the constructors (let, let*, letrec and define)
+provide is very important. 
+
+
+Example 1:
+
+@racket[(let ([a 1] [b 2] [c 4])
+    (+ a b c)
+)]
+
+This returns a normal 7 as the output. 
+
+Example 2: 
+@racket[
+    (let ([a 1] [b a] [c 4])
+    (+ a b c)
+)
+]
+
+In this case, we get an error because let does not allow us to use a to bind to b. 
+
+Example 3: 
+@racket[
+    (let* ([a 1] [b a] [c 4])
+    (+ a b c)
+)
+]
+
+When we try the simple scene that we do in case of let*, this allows us to 
+use a to bind it to b. 
+
+The main reason is because let when we open it, the definition becomes something like,
+
+Example 3a:
+@racket[
+    (let ([a 1])
+        (let ([b a])
+            (let ([c 4])
+                (+ a b c))))
+]
+
+Observations:
+@itemize[
+    @item{let does not allow any referencing within its definition scope.}
+    @item{let* allows that since we can see in Example 3a how it really breaks down.}
+]
+
+
+
+
+
+
 
 
 

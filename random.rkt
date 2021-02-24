@@ -20,4 +20,11 @@
     (+ a b c)
 )
 
+(let* ([a 1] [b a] [c 4])
+    (+ a b c)
+)
 
+(let ([a 1])
+    (let ([b a])
+        (let ([c 4])
+            (+ a b c))))
