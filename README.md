@@ -5,7 +5,8 @@ amazing programming language because of the beautiful abstractions it offers.
 
 
 Some thoughts on specific features of Racket. This is repo mostly for my personal learning. 
-I am mostly writing based on different sources that I read to answer my questions. 
+I am mostly writing based on different sources that I read to answer my questions. However,
+if any inaccuracies spotted please do report. 
 
 
 I don't think any of the thoughts here are incorrect (since I am mostly picking up from 
