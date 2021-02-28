@@ -175,6 +175,31 @@ Observations:
 
 
 
+@section[#:tag "macros"]{Macros}
+
+I think from my current understanding that Macros are the most precious 
+things that Racket has probably introduced. 
+These are functions that run at compiler time. 
+
+There are layers of macros that can exist. 
+The previous intution that I had about macros from programming languages
+such as C and such were that macros are simple "expanders".
+They replace a small piece of a code by a bigger piece of code by expanding 
+it out. 
+
+However, they are much more than that. 
+
+
+@racket[(define-macro (report EXPR)
+  #'(begin
+     (displayln (format "input was ~a" 'EXPR))
+     EXPR))]
+     
+@racket[(report (* 1 2 3 4))]
+
+
+@margin-note{Problem every line of code has to have a seperate racket. This 
+makes typesetting the code a little difficult. Did not expect this blasphemy.}
 
 
 
