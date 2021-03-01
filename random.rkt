@@ -45,3 +45,41 @@
 (report (* 1 2 3 4))
     
 
+;;Macro helpers
+(define stx #'(foo bar uganda))
+
+
+(syntax->datum 
+ (with-pattern ([(FIRST SECOND THIRD) stx])
+  #'(list FIRST SECOND FIRST)))
+
+(syntax->datum 
+ (with-pattern ([(FIRST SECOND THIRD) #'(1 2 3)])
+  #'(list FIRST SECOND FIRST)))
+
+(syntax->datum 
+ (with-pattern ([(FIRST SECOND THIRD) #'(12 3 dd)])
+  #'(list FIRST SECOND FIRST)))
+
+
+
+
+
+;;Defining a macro without a hygiene
+(define y 42)
+(define-macro (mac1)
+ #'(begin
+    (define y 88)
+    (println y)))
+
+(mac1)
+(println y)
+
+
+;;Defining a new macro using hygeiene
+
+(define x 42)
+(define-unhygienic-macro (mac)
+    #'(begin
+       (define x 84)
+       (println x)))

@@ -201,6 +201,56 @@ However, they are much more than that.
 @margin-note{Problem every line of code has to have a seperate racket. This 
 makes typesetting the code a little difficult. Did not expect this blasphemy.}
 
+@subsection[#:tag "hygienemacros"]{Hygiene Macros}
+
+In the previous part we learned how to define macros, however, we need a
+policy system to actually define macros and do something with that. 
+Hygiene is that policy system and an essential ingredient to understanding
+how to really define macros. 
+
+Before knowing anything about macros as I have mentioned above, I thought 
+that these are some magical constructs in the Racket universe, however, 
+now with a little more understanding I see how interesting it is to 
+understand what Hygiene really signifies here. 
+
+The two core problems that one can encounter during the defining 
+macros are: bindings and identifiers.
+Bindings because these are the ones that map the values to the 
+identifiers and identifiers because these are the different names
+that appear in the program. 
+
+There are basically two ways to reason about bindings and identifiers
+that are: 1) use the bindings depending on the place the macro was 
+defined, this is known as the definition site
+2) get the bindings depending on where the macro is being invoked. 
+
+
+
+@section[#:tag "Pattern matching"]{Pattern Matching}
+
+I think from what I have observed and absorbed from my surroundings is how
+interesting pattern matching can really be. 
+
+Using macros and their helper functions, pattern matching can really be 
+played around with. 
+
+@racket[(define stx #'(foo bar uganda))]
+
+
+@racket[(syntax->datum 
+ (with-pattern ([(FIRST SECOND THIRD) stx])
+  #'(list FIRST SECOND FIRST)))]
+
+@racket[(syntax->datum 
+ (with-pattern ([(FIRST SECOND THIRD) #'(1 2 3)])
+  #'(list FIRST SECOND FIRST)))]
+
+@racket[(syntax->datum 
+ (with-pattern ([(FIRST SECOND THIRD) #'(12 3 dd)])
+  #'(list FIRST SECOND FIRST)))]
+
+
+
 
 
 
