@@ -226,7 +226,7 @@ defined, this is known as the definition site
 
 
 
-@section[#:tag "Pattern matching"]{Pattern Matching}
+@section[#:tag "patternmatching"]{Pattern Matching}
 
 I think from what I have observed and absorbed from my surroundings is how
 interesting pattern matching can really be. 
