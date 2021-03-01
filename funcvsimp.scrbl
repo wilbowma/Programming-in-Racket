@@ -226,6 +226,17 @@ defined, this is known as the definition site
 
 
 
+@racket[(define y 42)
+(define-macro (mac1)
+ #'(begin
+    (define y 88)
+    (println y)))
+
+(mac1)
+(println y)]
+
+
+
 @section[#:tag "patternmatching"]{Pattern Matching}
 
 I think from what I have observed and absorbed from my surroundings is how
