@@ -1,6 +1,26 @@
 #lang scribble/manual
 
-@title{Understanding reader and writer}
+@title{Designing a Language in Racket}
+
+@section[#:tag "dsl"]{Designing a programming language"}
+
+Some thoughts about this, the core thing involved in designing a 
+domain specific programming language involve the following:
+design new notation and behaviour for a programming language, 
+write the racket program that takes source code in new language and 
+converts it into equivalent program, finally, run the racket program. 
+
+It's all about perspective and the way we are actually looking at this. 
+If we logically think about it, the source code is nothing but code
+being written in racket. 
+We are basically writing code in Racket that compiles to Racket which 
+then runs normally. 
+This is quite cool.
+Making a transcompiler is the key in the process of creating a new
+application. 
+
+
+
 --------
 There is the reader and the expander. 
 
