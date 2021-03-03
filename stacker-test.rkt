@@ -1,2 +1,7 @@
 #lang reader "stacker.rkt"
-; use stacker.rkt as a reader for this language  
+4
+8
++
+3
+*
+

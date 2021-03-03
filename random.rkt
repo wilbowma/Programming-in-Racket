@@ -1,5 +1,6 @@
 #lang racket/base
     (require br)
+    (require racket/port)
 
 ;;use require br instead and always as racket/base
 
@@ -84,4 +85,8 @@
        (define x 84)
        (println x)))
 
+;Test
+(syntax->datum #'foo)
+(syntax->datum #'(+ 1 2 3))
+(syntax-line #'foo)
 

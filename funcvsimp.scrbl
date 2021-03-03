@@ -237,7 +237,7 @@ defined, this is known as the definition site
 
 
 
-@section[#:tag "patternmatching"]{Pattern Matching}
+@subsection[#:tag "patternmatching"]{Pattern Matching}
 
 I think from what I have observed and absorbed from my surroundings is how
 interesting pattern matching can really be. 
@@ -259,6 +259,11 @@ played around with.
 @racket[(syntax->datum 
  (with-pattern ([(FIRST SECOND THIRD) #'(12 3 dd)])
   #'(list FIRST SECOND FIRST)))]
+
+
+@ssubection[#:tag "Syntaxpattern"]{Syntax Pattern}
+
+
 
 
 
