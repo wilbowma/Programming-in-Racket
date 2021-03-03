@@ -261,20 +261,20 @@ played around with.
   #'(list FIRST SECOND FIRST)))]
 
 
-@ssubection[#:tag "Syntaxpattern"]{Syntax Pattern}
+@subsection[#:tag "Syntaxpattern"]{Syntax Pattern}
+Tool for matching elements within a syntax object. 
+My use case for understanding these are for using macros 
+while building languages in beautiful racket.
+
+@margin-note{Link: https://docs.racket-lang.org/br/index.html#(form._((lib._br/define..rkt)._define-macro))}
+
+Define-macros are pretty cool. The reason is that 
+they allow us to pass a string of words as arguments. 
+
+Base example: 
 
 
-
-
-
-
-
-
-
-
-
-
+@racket[(define-macro (artistic BB y)
+ #'(format "~a" 'BB))
  
-
-
- 
+(artistic art y)]

@@ -90,3 +90,10 @@
 (syntax->datum #'(+ 1 2 3))
 (syntax-line #'foo)
 
+
+;;Define-macro
+(define-macro (artistic BB y)
+ #'(format "~a" 'BB))
+ 
+(artistic art y)
+
