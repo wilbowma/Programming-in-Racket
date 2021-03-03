@@ -14,6 +14,9 @@ Feel free to use it and/or submit issues if found.
 Link: https://aartikash.github.io/Programming-in-Racket/
 
 Current Structure:
+Language 1: Stacker language, (not in functional style thought)
+Testing Racket: Code that I used to describe things in funcvimp
+.scrbl - Files for scribble docs
 
 
 
