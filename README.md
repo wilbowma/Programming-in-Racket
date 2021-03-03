@@ -13,4 +13,7 @@ Feel free to use it and/or submit issues if found.
 
 Link: https://aartikash.github.io/Programming-in-Racket/
 
+Current Structure:
+
+
 
