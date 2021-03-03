@@ -97,3 +97,7 @@
  
 (artistic art y)
 
+;;Tests
+(number? 1)
+(equal? 'yes 'no)
+
