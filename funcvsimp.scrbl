@@ -136,7 +136,7 @@ Example 1:
     (+ a b c)
 )]
 
-This returns a normal 7 as the output. 
+This evaluates a normal 7 as the output. 
 
 Example 2: 
 @racket[
