@@ -157,6 +157,31 @@
 (factorial2 3)
 
 
+;; Map and filter
+(define (my-map proc xs)
+ (if (null? xs)
+     null
+     (cons (proc (first xs)) (my-map proc (rest xs)))))
+
+;;Test
+(my-map add1 '(1 2 3 4))
+(my-map sub1 '(1 2 3 4))
+(my-map abs (range -3 3))
+
+;;Filter
+(define (my-filter pred xs)
+ (if (null? xs)
+     null
+     (if (pred (first xs))
+         (cons (first xs) (my-filter pred (rest xs)))
+         (my-filter pred (rest xs)))))
+;;Test
+(my-filter even? (range 10))
+(my-filter add1 (range 10))
+(my-filter number? (range 10))
+(my-filter symbol? (range 10))
+          
+
  
  
  
