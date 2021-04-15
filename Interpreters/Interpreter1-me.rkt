@@ -51,7 +51,7 @@
 
 ;; takes in type, 
 (define (exp-checker type)
- (lambda (exp) (and? (pair? exp) (eq? (car exp) type))))
+ (lambda (exp) (and (pair? exp) (eq? (car exp) type))))
 
 (define (quote-exp?) (exp-checker 'quote))
 (define (if-exp?) (exp-checker 'if))
@@ -88,16 +88,15 @@
 (define (maybe-quote value)
  (cond ((lambda-exp? value) value)
        ((constant? value) value)
-       ((procedure value?) value)
+       ((procedure? value) value)
        (else (list 'quote value))))
 
+;;Testing the interpreter
 
-;; Understanding the apply in racket
 
-(define (a-sum lst)
- (apply -0 lst))
 
-(a-sum '(1 2 3))
+
+
        
        
 

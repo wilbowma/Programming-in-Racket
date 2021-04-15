@@ -4,6 +4,18 @@
 
 @table-of-contents[]
 
+@section[#:tag "QUestions"]{Thoughts}
+
+
+
+Some random thoughts as I am learning how to design interpreters. 
+
+@itemize{
+    @item{Why do humans keep coming up with new and different types of libraries for defining interpreters? }
+    @item{Why are these librariries better than using no library? }
+    @item{How must a beginner start to think about desgining an interpreter?}
+}
+
 @section[#:tag "intro"]{introduction}
 
 Learning to design an interpreter seems to be a very important 
