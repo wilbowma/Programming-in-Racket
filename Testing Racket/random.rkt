@@ -101,3 +101,14 @@
 (number? 1)
 (equal? 'yes 'no)
 
+(struct foo (bar baz quux) #:transparent)
+(foo e1 e2 e3)
+
+;; Writing an interepreter for a programming language
+(struct const (int) #:transparent)
+
+
+
+
+
+
