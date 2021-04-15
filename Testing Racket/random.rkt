@@ -183,7 +183,24 @@
           
 
  
- 
+;; Tail recursion 
+(define (tail-factorial n [acc 1])
+ (if (= n 1)
+     acc
+     (tail-factorial (- n 1) (* n acc))))
+(tail-factorial 4)
+
+;; Continuations
+(define c #f)
+;;Without c
+(+ 1 (+ 2 (+ 3 (+ 4 5))))
+(+ 1 (+ 2 (+ 3 (+ (let/cc here
+                   (set! c here)
+                   4) 5))))
+
+c
+
+     
  
 
 

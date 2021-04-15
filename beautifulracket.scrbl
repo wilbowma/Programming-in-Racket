@@ -66,4 +66,7 @@ Each module can contain submodules
 Each module consists of multiple functions (?)
 within itself.
 
+@section[#:tag "covered"]{Things covered from BR tut}
+
+Explainers: Recursion, 
 
