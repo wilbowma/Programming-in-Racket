@@ -30,7 +30,19 @@ I think the reason is fairly obvious, which is
     go in a language. -- I am sure, PL experts know this better than me, however, this is my way of looking at it. }
 }
 
+@section[#:tag "intervlan"]{Interpreter vs Languages vs Compilers}
+SO I had a thought, what is the difference between an Interpreter, Language and a Compiler?
 
+This is an interesting question because I have been trying to understand different ways of 
+building a interpreter in Racket. 
+That is when a question struck my head which was, is there a difference between saying
+"Designing a Language" and "Designing an Interpreter"? 
+
+
+
+
+
+The reason that I say this is because 
 @section[#:tag "interpreter1"]{Interpreter - 1}
 
 The general approach towards building this interpreter seems to be:

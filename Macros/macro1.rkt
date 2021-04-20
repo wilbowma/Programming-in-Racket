@@ -23,6 +23,15 @@
 (define-syntax (say-hi stx)
  #'(displayln "hi"))
 
-
+;;Moving from fixed output macros to input dependent macros
+(define-syntax (show-me stx)
+;;shows what the transformer is given which is a syntax object
+;;Syntax object 
+ (print stx)
+ #'(void))
  
-
+ ;;Testing the above thing 
+(show-me '(+ 1 2))
+(show-me (+ 1 2))
+(show-me "(+ 1 2)")
+(show-me )

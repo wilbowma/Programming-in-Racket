@@ -8,6 +8,7 @@ without any major prior functional language background.
 
 
 @include-section["funcvsimp.scrbl"]
+@include-section["interpreters.scrbl"]
 @include-section["beautifulracket.scrbl"]
 @include-section["patternmatching.scrbl"]
 
