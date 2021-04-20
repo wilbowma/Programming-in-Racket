@@ -68,5 +68,5 @@ within itself.
 
 @section[#:tag "covered"]{Things covered from BR tut}
 
-Explainers: Recursion, 
+Explainers: Recursion, Continuations, lang-line, 
 
