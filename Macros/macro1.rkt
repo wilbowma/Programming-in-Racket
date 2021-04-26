@@ -34,4 +34,45 @@
 (show-me '(+ 1 2))
 (show-me (+ 1 2))
 (show-me "(+ 1 2)")
-(show-me )
+
+
+;;Functions to access syntax object
+(define stx #'(if x (list "true") #f))
+;; To be honest, I am not sure why I would 
+;; need this sort of things,
+;; WHat is expected from syntax source, line, column?
+;; WHY WOULD I USE THIS??
+;; MAybe during compiler or interpreter or something?
+(syntax-source stx)
+(syntax-line stx)
+(syntax-column stx)
+
+(syntax->datum stx)
+(syntax-e stx)
+
+;; Transforming the input
+;; yaar i still dont see the point of this :/
+
+;;Wait, I think I am starting to see it a little bit. 
+;;It's all about playing with the syntax in different ways
+
+;;First use syntax->datum to convert syntax to list
+;; cdr slices off the "reverse-me" or the name 
+;; reverse, reverses the values
+;; datum->syntax can now be converted back into values
+;; That is finally passed through the racket compiler and evaluation is conducted. 
+
+(define-syntax (reverse-me stx)
+    (datum->syntax stx (reverse (cdr (syntax->datum stx)))))
+(reverse-me "back" "am" "i" values)
+;(reverse-me "back" "am" "i")
+;;(reverse-me "back" "am" "i" reverse)
+;;(reverse-me "back" "am" "i" concat)
+
+
+
+
+
+
+
+

@@ -3,7 +3,7 @@
 @title{Designing Languages}
 
 
-Experience of designing my first language in Racket 
+Experience of designing my first set of languages in Racket 
 without any major prior functional language background. 
 
 
